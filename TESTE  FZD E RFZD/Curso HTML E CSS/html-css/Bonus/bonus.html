@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        /*RESET++++++++++++++++++*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Tahoma, sans-serif;
+            text-decoration: none;
+        }
+        
+        body{
+            background-color: #cccccc;
+        }
+
+        /*HEADER+++++++++++++++++++++++++++*/
+
+        header{
+            background: rgb(0, 16, 158);
+            height: 120px;
+            margin:3px 5px 0;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+        h1{
+            font-weight: 500;
+            font-size: 45px;
+            line-height: 120px;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        /*NAV BAR+++++++++++++++++++++++++*/
+
+        ul{
+            background: gray;
+            margin: 0 5px;
+            margin-bottom: 25px;
+            height: 4rem;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+        }
+
+        li{
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            color: white;
+        }
+
+        li:hover{
+            background: black;
+            transition:  1.55s all;
+            box-shadow: 4px 1px 10px black;
+        }
+        /*FORM+++++++++++++++++++++++*/
+        .row{
+            padding: 0 20px;
+            display: table;
+            width: 100%;
+        }
+
+        form{
+            background-color:aliceblue;
+            width: 50%;
+            margin: 0 auto;
+            box-shadow: 2px 2px 15px black;
+            padding: 10px;
+        }
+
+        input, textarea{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1.1em;
+            font: 1em sans-serif;
+        }
+
+        label{
+            font-weight: bold;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        button{
+            padding: 10px;
+            text-transform: uppercase;
+            font-weight: bolder;
+            text-align: center;
+            color: rgb(0, 16, 158);
+            border: 1px solid rgb(0, 16, 158);
+            border-radius: 3px;
+        }
+
+        button:hover{
+            box-shadow: 3px 3px 9px black;
+            cursor: pointer;
+            background: rgb(0, 16, 158);
+            color: white;
+        }
+
+        input:invalid, textarea:invalid{
+            border-color: red;
+        }
+
+        input:valid, textarea:valid{
+            border-color: green;
+        }
+
+        span{
+            position: relative;
+        }
+
+        input:invalid + span::before, textarea:invalid + span::before{
+            content: '✖';
+            color: red;
+        }
+        input:valid + span::before, textarea:valid + span::before{
+            content: '✓';
+            color: green;
+        }
+
+        /*RESPONSIVE++++++++++++++++++++++*/
+
+        @media screen and (max-width:760px){
+            form{
+                width: 100%;
+            }
+        }    
+         
+        @media screen and (max-width: 660px){
+            button{
+                width: 100%;
+            }
+        }
+            
+       
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contato</h1>
+    </header>
+    <ul>
+        <a href="#"><li>Home</li></a>
+        <a href="#"><li>Sobre</li></a>
+        <a href="#"><li>Contato</li></a>
+        <a href="https://www.linkedin.com/in/jailson-silva-b528021b8/" target="_blank"><li>Linkedin</li></a>
+    </ul>
+
+    <div class="row">
+        <form class="card">
+                <label for="inputNome">Primeiro Nome: </label>
+                <input type="text" id="inputNome" placeholder="Digite Seu Nome:" required maxlength="25" minlength="2">
+                <span></span>
+                
+                <label for="inputEmail">Seu E-mail:</label>
+                <input type="e-mail" id="inputEmail" placeholder="Digite Seu Pior E-mail" required maxlength="50">
+                <span></span>
+                
+                <label for="mensagem">Mensagem:</label>
+                <textarea name="textareaMsg" id="textareaMsg" required maxlength="100" minlength="10"></textarea>
+                <span></span>
+
+                <button>Enviar Msg</button>
+        </form>
+    </div>
+
+    <script src="validando.js"></script>
+</body>
+</html>
